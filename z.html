@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Form - All Input Types</title>
+</head>
+
+<body>
+
+    <h1>HTML Form Example</h1>
+
+    <form action="#" method="post">
+
+        <!-- Text -->
+        <label>Full Name:</label><br>
+        <input type="text" name="fullname" placeholder="Enter your name"><br><br>
+
+        <!-- Password -->
+        <label>Password:</label><br>
+        <input type="password" name="password"><br><br>
+
+        <!-- Email -->
+        <label>Email:</label><br>
+        <input type="email" name="email"><br><br>
+
+        <!-- Number -->
+        <label>Age:</label><br>
+        <input type="number" min="1" max="100"><br><br>
+
+        <!-- Phone -->
+        <label>Phone:</label><br>
+        <input type="tel"><br><br>
+
+        <!-- URL -->
+        <label>Website:</label><br>
+        <input type="url"><br><br>
+
+        <!-- Search -->
+        <label>Search:</label><br>
+        <input type="search"><br><br>
+
+        <!-- Date -->
+        <label>Date:</label><br>
+        <input type="date"><br><br>
+
+        <!-- Time -->
+        <label>Time:</label><br>
+        <input type="time"><br><br>
+
+        <!-- Datetime -->
+        <label>Date & Time:</label><br>
+        <input type="datetime-local"><br><br>
+
+        <!-- Month -->
+        <label>Month:</label><br>
+        <input type="month"><br><br>
+
+        <!-- Week -->
+        <label>Week:</label><br>
+        <input type="week"><br><br>
+
+        <!-- Color -->
+        <label>Favorite Color:</label><br>
+        <input type="color"><br><br>
+
+        <!-- Range -->
+        <label>Volume:</label><br>
+        <input type="range" min="0" max="100"><br><br>
+
+        <!-- File -->
+        <label>Upload File:</label><br>
+        <input type="file"><br><br>
+
+        <!-- Hidden -->
+        <input type="hidden" name="userid" value="101">
+
+        <!-- Radio -->
+        <label>Gender:</label><br>
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female
+        <input type="radio" name="gender" value="Other"> Other
+        <br><br>
+
+        <!-- Checkbox -->
+        <label>Skills:</label><br>
+        <input type="checkbox"> HTML
+        <input type="checkbox"> CSS
+        <input type="checkbox"> JavaScript
+        <br><br>
+
+        <!-- Select -->
+        <label>Country:</label><br>
+        <select>
+            <option>India</option>
+            <option>USA</option>
+            <option>Canada</option>
+            <option>Australia</option>
+        </select>
+        <br><br>
+
+        <!-- Multiple Select -->
+        <label>Languages:</label><br>
+        <select multiple>
+            <option>Hindi</option>
+            <option>English</option>
+            <option>French</option>
+            <option>Spanish</option>
+        </select>
+        <br><br>
+
+        <!-- Textarea -->
+        <label>Address:</label><br>
+        <textarea rows="4" cols="40"></textarea>
+        <br><br>
+
+        <!-- Datalist -->
+        <label>Choose Browser:</label><br>
+        <input list="browsers">
+        <datalist id="browsers">
+            <option value="Chrome">
+            <option value="Firefox">
+            <option value="Edge">
+            <option value="Safari">
+        </datalist>
+        <br><br>
+
+        <!-- Progress -->
+        <label>Progress:</label><br>
+        <progress value="70" max="100"></progress>
+        <br><br>
+
+        <!-- Meter -->
+        <label>Disk Usage:</label><br>
+        <meter value="0.6">60%</meter>
+        <br><br>
+
+        <!-- Buttons -->
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+        <input type="button" value="Normal Button" onclick="alert('Button Clicked!')">
+
+    </form>
+
+</body>
+
+</html>
