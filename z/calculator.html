@@ -1,183 +1,280 @@
 <!DOCTYPE html>
 <!-- 
-  Pure HTML Calculator (No CSS, No JS)
-  Goal: learn as many HTML tags/attributes as possible using a "calculator" as the theme.
-  Note: Since there is no JavaScript, the buttons will NOT actually calculate anything.
-  This file is purely for practicing HTML structure, tags, and attributes.
+  DOCTYPE declaration:
+  This tells the browser which version of HTML we are using (HTML5).
+  It must always be the very first line of an HTML file.
 -->
 <html lang="en">
+<!-- 
+  <html> tag:
+  This is the root element that wraps the entire page.
+  The "lang" attribute tells browsers/screen readers the page language (English here).
+-->
 
 <head>
+    <!-- 
+    <head> section:
+    Contains information ABOUT the page (metadata) that is not shown directly on the page,
+    such as the title, character set, and description.
+  -->
+
+    <!-- 
+    <meta charset>:
+    Defines the character encoding. UTF-8 supports almost all characters/symbols (like ×, ÷, %).
+    Used in almost every HTML page to avoid weird symbol/text issues.
+  -->
     <meta charset="UTF-8">
+
+    <!-- 
+    <meta name="viewport">:
+    Helps the page display correctly on mobile devices by matching the device width.
+  -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A pure HTML calculator layout for learning purposes">
-    <meta name="author" content="Devansh">
-    <title>HTML-Only Calculator</title>
+
+    <!-- 
+    <title> tag:
+    Sets the text shown on the browser tab.
+    Every HTML page should have exactly one title.
+  -->
+    <title>Calculator Learning Project - Pure HTML</title>
 </head>
 
 <body>
+    <!-- 
+    <body> tag:
+    Contains everything visible to the user: text, forms, tables, images, etc.
+  -->
 
-    <!-- HEADER SECTION -->
+    <!-- 
+    <header> tag (semantic tag):
+    Represents introductory content, usually containing headings, logo, or intro text.
+    Used at the top of a page or section to group heading-related content.
+  -->
     <header>
-        <h1>My HTML Calculator</h1>
-        <p><em>Built with only HTML — no CSS, no JavaScript.</em></p>
-        <hr>
+        <!-- 
+      <h1> tag:
+      The main heading of the page. Only one <h1> should normally be used per page.
+    -->
+        <h1>HTML Calculator Learning Project</h1>
+
+        <!-- 
+      <p> tag:
+      Defines a paragraph of text. Used for normal blocks of readable text.
+    -->
+        <p>This project demonstrates HTML structure, forms, tables, and semantic tags using a simple calculator layout.
+            No CSS or JavaScript is used — this is pure HTML for learning purposes.</p>
     </header>
 
-    <!-- NAVIGATION -->
-    <nav>
-        <ul>
-            <li><a href="#calculator-section">Calculator</a></li>
-            <li><a href="#about-section">About</a></li>
-            <li><a href="#contact-section">Contact</a></li>
-        </ul>
-    </nav>
+    <!-- <hr> tag: Draws a horizontal line to visually separate sections of content. -->
+    <hr>
 
-    <!-- MAIN CONTENT -->
+    <!-- 
+    <main> tag (semantic tag):
+    Represents the main, central content of the page (excluding headers/footers/sidebars).
+    A page should only have one <main> element.
+  -->
     <main>
 
-        <section id="calculator-section">
-            <h2>Calculator</h2>
+        <!-- 
+      <section> tag (semantic tag):
+      Groups related content together, here specifically the calculator form section.
+    -->
+        <section>
+            <h2>Enter Numbers and Choose an Operation</h2>
 
-            <!-- FORM: the calculator "body" -->
-            <form action="#" method="get">
+            <!-- 
+        <form> tag:
+        Used to collect user input. Wraps all input fields, labels, and buttons
+        that belong together as one logical group.
+        action="#" means the form doesn't submit anywhere real (since we have no backend).
+      -->
+            <form action="#">
+
+                <!-- 
+          <fieldset> and <legend> tags:
+          <fieldset> groups related form controls with a visible border.
+          <legend> provides a caption/title for that group.
+          Used to organize long forms into clear sections.
+        -->
                 <fieldset>
-                    <legend>Enter Numbers</legend>
+                    <legend>Number Inputs</legend>
 
-                    <label for="num1">First Number:</label>
-                    <input type="number" id="num1" name="num1" placeholder="e.g. 10" required>
+                    <!-- 
+            <label> tag:
+            Describes what an input field is for. The "for" attribute connects
+            the label to the input's "id", so clicking the label focuses the input.
+          -->
+                    <label for="num1">First Number:</label><br>
+
+                    <!-- 
+            <input type="number">:
+            Restricts input to numeric values only.
+            - placeholder: shows a hint before the user types.
+            - required: form cannot submit unless filled.
+            - min/max: sets minimum and maximum allowed values.
+            - step: sets allowed increment (here, whole numbers only).
+          -->
+                    <input type="number" id="num1" name="num1" placeholder="Enter first number" min="-1000" max="1000"
+                        step="1" required>
+
                     <br><br>
+                    <!-- <br> tag: Inserts a single line break. Used for simple spacing between elements. -->
 
-                    <label for="num2">Second Number:</label>
-                    <input type="number" id="num2" name="num2" placeholder="e.g. 5" required>
-                    <br><br>
+                    <label for="num2">Second Number:</label><br>
+                    <input type="number" id="num2" name="num2" placeholder="Enter second number" min="-1000" max="1000"
+                        step="1" required>
+                </fieldset>
 
-                    <label for="operation">Choose Operation:</label>
-                    <select id="operation" name="operation">
+                <br>
+
+                <fieldset>
+                    <legend>Select Operation</legend>
+
+                    <label for="operation">Choose an operation:</label><br>
+
+                    <!-- 
+            <select> and <option> tags:
+            <select> creates a dropdown list.
+            <option> defines each choice inside the dropdown.
+            Used when the user must pick exactly one option from a fixed list.
+          -->
+                    <select id="operation" name="operation" required>
+                        <option value="">-- Select --</option>
                         <option value="add">Addition (+)</option>
-                        <option value="subtract">Subtraction (−)</option>
+                        <option value="subtract">Subtraction (-)</option>
                         <option value="multiply">Multiplication (×)</option>
                         <option value="divide">Division (÷)</option>
+                        <option value="modulus">Modulus (%)</option>
+                        <option value="power">Power (^)</option>
                     </select>
-                    <br><br>
-
-                    <!-- Radio buttons: alternate way to pick operation -->
-                    <p>Or pick using radio buttons:</p>
-                    <input type="radio" id="opAdd" name="opRadio" value="add">
-                    <label for="opAdd">+</label>
-
-                    <input type="radio" id="opSub" name="opRadio" value="subtract">
-                    <label for="opSub">−</label>
-
-                    <input type="radio" id="opMul" name="opRadio" value="multiply">
-                    <label for="opMul">×</label>
-
-                    <input type="radio" id="opDiv" name="opRadio" value="divide">
-                    <label for="opDiv">÷</label>
-                    <br><br>
-
-                    <!-- Checkbox: extra option -->
-                    <input type="checkbox" id="round" name="round" value="yes">
-                    <label for="round">Round result to nearest whole number</label>
-                    <br><br>
-
-                    <!-- Display screen (just a readonly text input, no JS to fill it) -->
-                    <label for="display">Display:</label>
-                    <input type="text" id="display" name="display" readonly
-                        placeholder="Result will not compute (no JS)">
-                    <br><br>
-
-                    <!-- Buttons -->
-                    <button type="submit">Calculate</button>
-                    <button type="reset">Clear</button>
                 </fieldset>
-            </form>
 
-            <!-- BUTTON PAD using a TABLE -->
-            <h3>Button Pad Layout</h3>
-            <table border="1" cellpadding="10" cellspacing="0">
-                <caption>Calculator Keypad</caption>
+                <br>
+
+                <fieldset>
+                    <legend>Result</legend>
+
+                    <label for="result">Result:</label><br>
+
+                    <!-- 
+            <input type="text"> with "readonly":
+            readonly means the user can see the value but cannot edit it directly.
+            Used here because the result should only be set by the Calculate button (in a real JS version),
+            not typed in manually.
+          -->
+                    <input type="text" id="result" name="result" placeholder="Result will appear here" readonly
+                        maxlength="20">
+                </fieldset>
+
+                <br>
+
+                <!-- 
+          <button> tags:
+          type="submit" -> normally submits the form (used here for "Calculate").
+          type="reset"  -> clears all fields back to their default values.
+          type="button" -> a plain button with no default action (used for "Clear",
+                           since real clearing logic would need JavaScript).
+          disabled      -> makes a button unusable/greyed out (shown for learning purposes).
+        -->
+                <button type="submit">Calculate</button>
+                <button type="button">Clear</button>
+                <button type="reset">Reset</button>
+                <button type="button" disabled>Advanced Mode (Coming Soon)</button>
+
+            </form>
+        </section>
+
+        <hr>
+
+        <!-- 
+      Second <section> tag:
+      Groups the educational table explaining calculator operations.
+    -->
+        <section>
+            <h2>Understanding Calculator Operations</h2>
+            <p>The table below explains what each operation does, for learning reference.</p>
+
+            <!-- 
+        <table> tag:
+        Displays data in rows and columns. Used here to explain each math operation clearly.
+      -->
+            <table border="1" cellpadding="8" cellspacing="0">
+                <!-- <thead> groups the header row(s) of the table. -->
                 <thead>
                     <tr>
-                        <th colspan="4">Keypad</th>
+                        <!-- <th> defines a header cell (bold and centered by default). -->
+                        <th>Symbol</th>
+                        <th>Operation Name</th>
+                        <th>Description</th>
                     </tr>
                 </thead>
+
+                <!-- <tbody> groups the main data rows of the table. -->
                 <tbody>
                     <tr>
-                        <td><button type="button">7</button></td>
-                        <td><button type="button">8</button></td>
-                        <td><button type="button">9</button></td>
-                        <td><button type="button">÷</button></td>
+                        <!-- <td> defines a normal data cell. -->
+                        <td>+</td>
+                        <td>Addition</td>
+                        <td>Adds the first number and the second number together.</td>
                     </tr>
                     <tr>
-                        <td><button type="button">4</button></td>
-                        <td><button type="button">5</button></td>
-                        <td><button type="button">6</button></td>
-                        <td><button type="button">×</button></td>
+                        <td>-</td>
+                        <td>Subtraction</td>
+                        <td>Subtracts the second number from the first number.</td>
                     </tr>
                     <tr>
-                        <td><button type="button">1</button></td>
-                        <td><button type="button">2</button></td>
-                        <td><button type="button">3</button></td>
-                        <td><button type="button">−</button></td>
+                        <td>×</td>
+                        <td>Multiplication</td>
+                        <td>Multiplies the first number by the second number.</td>
                     </tr>
                     <tr>
-                        <td><button type="button">0</button></td>
-                        <td><button type="button">.</button></td>
-                        <td><button type="button">=</button></td>
-                        <td><button type="button">+</button></td>
+                        <td>÷</td>
+                        <td>Division</td>
+                        <td>Divides the first number by the second number.</td>
+                    </tr>
+                    <tr>
+                        <td>%</td>
+                        <td>Modulus</td>
+                        <td>Gives the remainder after dividing the first number by the second.</td>
+                    </tr>
+                    <tr>
+                        <td>^</td>
+                        <td>Power</td>
+                        <td>Raises the first number to the power of the second number.</td>
                     </tr>
                 </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="4">End of Keypad</td>
-                    </tr>
-                </tfoot>
             </table>
         </section>
 
-        <!-- ABOUT SECTION -->
-        <section id="about-section">
-            <h2>About This Page</h2>
-            <article>
-                <p>This page demonstrates many core HTML tags and attributes:</p>
-                <ol>
-                    <li>Structural tags: <code>header</code>, <code>nav</code>, <code>main</code>, <code>section</code>,
-                        <code>article</code>, <code>aside</code>, <code>footer</code>
-                    </li>
-                    <li>Form elements: <code>input</code> (text, number, radio, checkbox), <code>select</code>,
-                        <code>fieldset</code>, <code>legend</code>, <code>label</code>, <code>button</code>
-                    </li>
-                    <li>Table elements: <code>table</code>, <code>thead</code>, <code>tbody</code>, <code>tfoot</code>,
-                        <code>tr</code>, <code>td</code>, <code>th</code>, <code>caption</code>
-                    </li>
-                    <li>Text formatting: <code>em</code>, <code>strong</code>, <code>code</code>, <code>br</code>,
-                        <code>hr</code>
-                    </li>
-                </ol>
-            </article>
+        <hr>
 
-            <aside>
-                <p><strong>Tip:</strong> To make this calculator actually work, you'll eventually need JavaScript to
-                    read input values and compute the result. That's the natural next step after HTML!</p>
-            </aside>
-        </section>
-
-        <!-- CONTACT SECTION -->
-        <section id="contact-section">
-            <h2>Contact</h2>
-            <address>
-                Made by Devansh <br>
-                Email: <a href="mailto:contactdevanshgupta2005@gmail.com">contactdevanshgupta2005@gmail.com</a>
-            </address>
+        <!-- 
+      Third <section> tag:
+      A short notes area demonstrating more text-related tags.
+    -->
+        <section>
+            <h2>Notes for Beginners</h2>
+            <p>
+                This form uses several input restrictions such as <strong>required</strong> fields,
+                <em>readonly</em> results, and number <code>min/max/step</code> limits.
+                These attributes help control what kind of data a user can enter, even before
+                any JavaScript validation is added.
+            </p>
+            <p>Text formatting examples: <b>bold text</b>, <i>italic text</i>, <u>underlined text</u>, and
+                <mark>highlighted text</mark>.</p>
         </section>
 
     </main>
 
-    <!-- FOOTER -->
+    <hr>
+
+    <!-- 
+    <footer> tag (semantic tag):
+    Represents the bottom section of a page, usually containing copyright info,
+    author details, or closing notes.
+  -->
     <footer>
-        <hr>
-        <p>&copy; 2026 Devansh — HTML Learning Project</p>
+        <p>Created as a beginner HTML learning project by Devansh. &copy; 2026</p>
     </footer>
 
 </body>
