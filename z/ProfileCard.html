@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Card</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 12px;
+        }
+
+        button {
+            margin-top: 12px;
+            padding: 10px 16px;
+            border: none;
+            background: #3498db;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <img src="https://via.placeholder.com/100" alt="Profile Image" />
+        <h2 id="name">Your Name</h2>
+        <p id="role">Web Developer</p>
+        <p id="bio">Learning HTML, CSS, and JavaScript.</p>
+        <button id="btn">Say Hello</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        // 1. Function Declaration
+        function greetUser(name) {
+            return "Hello, " + name + "!";
+        }
+
+        // 2. Function Expression
+        const showRole = function (role) {
+            return "Role: " + role;
+        };
+
+        // 3. Arrow Function
+        const updateBio = (bio) => {
+            document.getElementById("bio").textContent = bio;
+        };
+
+        // 4. Anonymous Function
+        document.getElementById("btn").addEventListener("click", function () {
+            document.getElementById("message").textContent = greetUser("Alex");
+        });
+
+        // 5. Callback Function
+        function changeText(text, callback) {
+            document.getElementById("message").textContent = text;
+            callback();
+        }
+
+        // 6. IIFE (Immediately Invoked Function Expression)
+        (function () {
+            document.getElementById("name").textContent = "Alex Carter";
+            document.getElementById("role").textContent = showRole("Frontend Developer");
+        })();
+
+        // Example of callback
+        changeText("Profile Card Loaded!", function () {
+            updateBio("I love building simple web projects.");
+        });
+    </script>
+</body>
+
+</html>

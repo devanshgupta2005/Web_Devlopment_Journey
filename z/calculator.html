@@ -1,279 +1,179 @@
 <!DOCTYPE html>
 <!-- 
-  DOCTYPE tells the browser this is an HTML5 document.
-  Always the first line of any HTML file.
+  Pure HTML Calculator (No CSS, No JS)
+  Goal: learn as many HTML tags/attributes as possible using a "calculator" as the theme.
+  Note: Since there is no JavaScript, the buttons will NOT actually calculate anything.
+  This file is purely for practicing HTML structure, tags, and attributes.
 -->
 <html lang="en">
-<!-- 
-  <html> is the root element of the page.
-  lang="en" tells browsers/screen readers the content is in English.
--->
 
 <head>
-    <!-- 
-    <head> holds information ABOUT the page (metadata),
-    not content that is directly visible to the user.
-  -->
     <meta charset="UTF-8">
-    <!-- charset ensures symbols like ×, ÷, % display correctly -->
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- viewport meta tag makes the page behave properly on mobile screens -->
-
-    <title>Basic HTML Calculator Layout</title>
-    <!-- <title> sets the text shown on the browser tab -->
+    <meta name="description" content="A pure HTML calculator layout for learning purposes">
+    <meta name="author" content="Devansh">
+    <title>HTML-Only Calculator</title>
 </head>
 
 <body>
-    <!-- <body> contains everything visible on the page -->
 
-    <!-- 
-    ================================
-    HEADER SECTION (semantic tag)
-    ================================
-    <header> groups the introductory heading/description of the page.
-    Used at the top of a page or section.
-  -->
+    <!-- HEADER SECTION -->
     <header>
-        <h1>Basic HTML Calculator</h1>
-        <!-- <h1> = main page heading, should appear once per page -->
-
-        <p>This is a pure HTML calculator layout. No CSS or JavaScript is used, so the buttons do not perform real
-            calculations yet.</p>
-        <!-- <p> = a paragraph of normal readable text -->
+        <h1>My HTML Calculator</h1>
+        <p><em>Built with only HTML — no CSS, no JavaScript.</em></p>
+        <hr>
     </header>
 
-    <hr>
-    <!-- <hr> draws a horizontal line to separate the header from the main content -->
+    <!-- NAVIGATION -->
+    <nav>
+        <ul>
+            <li><a href="#calculator-section">Calculator</a></li>
+            <li><a href="#about-section">About</a></li>
+            <li><a href="#contact-section">Contact</a></li>
+        </ul>
+    </nav>
 
-    <!-- 
-    ================================
-    MAIN SECTION (semantic tag)
-    ================================
-    <main> wraps the primary content of the page.
-    A page should only have one <main> element.
-  -->
+    <!-- MAIN CONTENT -->
     <main>
 
-        <!-- 
-      <section> groups the calculator form together as one logical unit.
-    -->
-        <section>
+        <section id="calculator-section">
             <h2>Calculator</h2>
 
-            <!-- 
-        <form> wraps all the calculator's inputs and buttons.
-        action="#" means it doesn't send data anywhere real (no backend here).
-      -->
-            <form action="#">
-
-                <!-- 
-          ================================
-          DISPLAY AREA
-          ================================
-          <fieldset> groups related controls with a visible border.
-          <legend> gives that group a title/caption.
-        -->
+            <!-- FORM: the calculator "body" -->
+            <form action="#" method="get">
                 <fieldset>
-                    <legend>Display</legend>
+                    <legend>Enter Numbers</legend>
 
-                    <!-- <label> describes the input field it is linked to via "for"/"id" -->
-                    <label for="display">Screen:</label><br>
+                    <label for="num1">First Number:</label>
+                    <input type="number" id="num1" name="num1" placeholder="e.g. 10" required>
+                    <br><br>
 
-                    <!-- 
-            <input type="text"> acts as the calculator's screen.
-            readonly = user cannot type directly into it (only buttons would update it, with JS).
-            placeholder = hint text shown when the display is empty.
-            maxlength = limits how many characters can be shown.
-          -->
-                    <input type="text" id="display" name="display" placeholder="0" readonly maxlength="25">
+                    <label for="num2">Second Number:</label>
+                    <input type="number" id="num2" name="num2" placeholder="e.g. 5" required>
+                    <br><br>
+
+                    <label for="operation">Choose Operation:</label>
+                    <select id="operation" name="operation">
+                        <option value="add">Addition (+)</option>
+                        <option value="subtract">Subtraction (−)</option>
+                        <option value="multiply">Multiplication (×)</option>
+                        <option value="divide">Division (÷)</option>
+                    </select>
+                    <br><br>
+
+                    <!-- Radio buttons: alternate way to pick operation -->
+                    <p>Or pick using radio buttons:</p>
+                    <input type="radio" id="opAdd" name="opRadio" value="add">
+                    <label for="opAdd">+</label>
+
+                    <input type="radio" id="opSub" name="opRadio" value="subtract">
+                    <label for="opSub">−</label>
+
+                    <input type="radio" id="opMul" name="opRadio" value="multiply">
+                    <label for="opMul">×</label>
+
+                    <input type="radio" id="opDiv" name="opRadio" value="divide">
+                    <label for="opDiv">÷</label>
+                    <br><br>
+
+                    <!-- Checkbox: extra option -->
+                    <input type="checkbox" id="round" name="round" value="yes">
+                    <label for="round">Round result to nearest whole number</label>
+                    <br><br>
+
+                    <!-- Display screen (just a readonly text input, no JS to fill it) -->
+                    <label for="display">Display:</label>
+                    <input type="text" id="display" name="display" readonly
+                        placeholder="Result will not compute (no JS)">
+                    <br><br>
+
+                    <!-- Buttons -->
+                    <button type="submit">Calculate</button>
+                    <button type="reset">Clear</button>
                 </fieldset>
-
-                <br>
-
-                <!-- 
-          ================================
-          NUMBER PAD + OPERATORS (TABLE LAYOUT)
-          ================================
-          <table> arranges the calculator buttons into a neat grid of rows and columns.
-          This is a classic beginner use of tables: laying out button grids.
-        -->
-                <fieldset>
-                    <legend>Keypad</legend>
-
-                    <table border="1" cellpadding="10" cellspacing="0">
-                        <!-- 
-              <tbody> groups the main rows of the table.
-              Each <tr> is one row; each <td> is one cell holding a button.
-            -->
-                        <tbody>
-
-                            <!-- Row 1: Clear, Backspace, %, Divide -->
-                            <tr>
-                                <td><button type="reset">C</button></td>
-                                <!-- type="reset" clears the whole form back to default values -->
-
-                                <td><button type="button">Backspace</button></td>
-                                <!-- type="button" = plain button, does nothing on its own without JS -->
-
-                                <td><button type="button">%</button></td>
-                                <td><button type="button">÷</button></td>
-                            </tr>
-
-                            <!-- Row 2: 7, 8, 9, Multiply -->
-                            <tr>
-                                <td><button type="button">7</button></td>
-                                <td><button type="button">8</button></td>
-                                <td><button type="button">9</button></td>
-                                <td><button type="button">×</button></td>
-                            </tr>
-
-                            <!-- Row 3: 4, 5, 6, Subtract -->
-                            <tr>
-                                <td><button type="button">4</button></td>
-                                <td><button type="button">5</button></td>
-                                <td><button type="button">6</button></td>
-                                <td><button type="button">-</button></td>
-                            </tr>
-
-                            <!-- Row 4: 1, 2, 3, Add -->
-                            <tr>
-                                <td><button type="button">1</button></td>
-                                <td><button type="button">2</button></td>
-                                <td><button type="button">3</button></td>
-                                <td><button type="button">+</button></td>
-                            </tr>
-
-                            <!-- Row 5: 0, Decimal point, Equals (spans layout with plain cells) -->
-                            <tr>
-                                <td><button type="button">0</button></td>
-                                <td><button type="button">.</button></td>
-                                <td>
-                                    <!-- 
-                    type="submit" is used here for "=" since submitting a form
-                    is conceptually similar to "confirming" the calculation.
-                    In a real working calculator, JavaScript would intercept this.
-                  -->
-                                    <button type="submit">=</button>
-                                </td>
-                                <td>
-                                    <!-- disabled = button is visible but not clickable -->
-                                    <button type="button" disabled>M+</button>
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </fieldset>
-
-                <br>
-
-                <!-- 
-          ================================
-          NUMBER INPUT EXAMPLE (extra learning fields)
-          ================================
-          These show the <input type="number"> tag with common attributes,
-          separate from the button-based keypad above.
-        -->
-                <fieldset>
-                    <legend>Manual Number Entry (for learning input attributes)</legend>
-
-                    <label for="num1">Enter a number directly:</label><br>
-                    <input type="number" id="num1" name="num1" placeholder="e.g. 25" min="-1000" max="1000" step="1">
-                    <!-- 
-            min/max = smallest/largest accepted value
-            step = increment allowed when using up/down arrows on the input
-          -->
-                </fieldset>
-
             </form>
-        </section>
 
-        <hr>
-
-        <!-- 
-      ================================
-      REFERENCE TABLE SECTION
-      ================================
-      A second table explaining what each symbol means, for learning purposes.
-    -->
-        <section>
-            <h2>What Each Button Means</h2>
-
-            <table border="1" cellpadding="8" cellspacing="0">
+            <!-- BUTTON PAD using a TABLE -->
+            <h3>Button Pad Layout</h3>
+            <table border="1" cellpadding="10" cellspacing="0">
+                <caption>Calculator Keypad</caption>
                 <thead>
-                    <!-- <thead> groups the header row of the table -->
                     <tr>
-                        <th>Button</th>
-                        <!-- <th> = header cell, bold and centered by default -->
-                        <th>Meaning</th>
-                        <th>Needs JavaScript to Work?</th>
+                        <th colspan="4">Keypad</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>0-9</td>
-                        <td>Digit buttons for entering numbers</td>
-                        <td>Yes</td>
+                        <td><button type="button">7</button></td>
+                        <td><button type="button">8</button></td>
+                        <td><button type="button">9</button></td>
+                        <td><button type="button">÷</button></td>
                     </tr>
                     <tr>
-                        <td>.</td>
-                        <td>Decimal point, for entering fractional numbers</td>
-                        <td>Yes</td>
+                        <td><button type="button">4</button></td>
+                        <td><button type="button">5</button></td>
+                        <td><button type="button">6</button></td>
+                        <td><button type="button">×</button></td>
                     </tr>
                     <tr>
-                        <td>+ - × ÷</td>
-                        <td>Basic math operators: add, subtract, multiply, divide</td>
-                        <td>Yes</td>
+                        <td><button type="button">1</button></td>
+                        <td><button type="button">2</button></td>
+                        <td><button type="button">3</button></td>
+                        <td><button type="button">−</button></td>
                     </tr>
                     <tr>
-                        <td>%</td>
-                        <td>Percentage / modulus operation</td>
-                        <td>Yes</td>
-                    </tr>
-                    <tr>
-                        <td>=</td>
-                        <td>Calculates and shows the final result</td>
-                        <td>Yes</td>
-                    </tr>
-                    <tr>
-                        <td>C</td>
-                        <td>Clears the display back to empty/zero</td>
-                        <td>Partially - form reset works without JS, but a true "clear display" needs JS</td>
-                    </tr>
-                    <tr>
-                        <td>Backspace</td>
-                        <td>Removes the last entered digit</td>
-                        <td>Yes</td>
+                        <td><button type="button">0</button></td>
+                        <td><button type="button">.</button></td>
+                        <td><button type="button">=</button></td>
+                        <td><button type="button">+</button></td>
                     </tr>
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4">End of Keypad</td>
+                    </tr>
+                </tfoot>
             </table>
         </section>
 
-        <hr>
+        <!-- ABOUT SECTION -->
+        <section id="about-section">
+            <h2>About This Page</h2>
+            <article>
+                <p>This page demonstrates many core HTML tags and attributes:</p>
+                <ol>
+                    <li>Structural tags: <code>header</code>, <code>nav</code>, <code>main</code>, <code>section</code>,
+                        <code>article</code>, <code>aside</code>, <code>footer</code></li>
+                    <li>Form elements: <code>input</code> (text, number, radio, checkbox), <code>select</code>,
+                        <code>fieldset</code>, <code>legend</code>, <code>label</code>, <code>button</code></li>
+                    <li>Table elements: <code>table</code>, <code>thead</code>, <code>tbody</code>, <code>tfoot</code>,
+                        <code>tr</code>, <code>td</code>, <code>th</code>, <code>caption</code></li>
+                    <li>Text formatting: <code>em</code>, <code>strong</code>, <code>code</code>, <code>br</code>,
+                        <code>hr</code></li>
+                </ol>
+            </article>
 
-        <section>
-            <h2>Notes</h2>
-            <p>
-                In this project, every button is <strong>visually present</strong> but only
-                <em>form-related</em> buttons (Reset and Submit) do anything at all without JavaScript.
-                The digit and operator buttons currently do nothing when clicked because
-                HTML alone cannot run logic or perform math.
-            </p>
+            <aside>
+                <p><strong>Tip:</strong> To make this calculator actually work, you'll eventually need JavaScript to
+                    read input values and compute the result. That's the natural next step after HTML!</p>
+            </aside>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact-section">
+            <h2>Contact</h2>
+            <address>
+                Made by Devansh <br>
+                Email: <a href="mailto:someone@example.com">someone@example.com</a>
+            </address>
         </section>
 
     </main>
 
-    <hr>
-
-    <!-- 
-    ================================
-    FOOTER SECTION (semantic tag)
-    ================================
-    <footer> holds closing information like credits or copyright.
-  -->
+    <!-- FOOTER -->
     <footer>
-        <p>Pure HTML Calculator Layout &copy; 2026 - Built for learning purposes.</p>
+        <hr>
+        <p>&copy; 2026 Devansh — HTML Learning Project</p>
     </footer>
 
 </body>
