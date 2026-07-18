@@ -2,100 +2,162 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Card</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .card {
-            background: white;
-            padding: 24px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            background: #ffffff;
+            width: 320px;
+            border-radius: 16px;
             text-align: center;
-            width: 300px;
+            padding: 32px 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
         }
 
-        img {
-            width: 100px;
-            height: 100px;
+        .card img {
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            margin-bottom: 12px;
+            object-fit: cover;
+            border: 4px solid #6366f1;
         }
 
-        button {
+        .card h1 {
+            margin-top: 16px;
+            font-size: 22px;
+            color: #1e293b;
+        }
+
+        .card p.role {
+            color: #6366f1;
+            font-weight: 600;
+            margin-top: 4px;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .card p.bio {
             margin-top: 12px;
-            padding: 10px 16px;
-            border: none;
-            background: #3498db;
-            color: white;
-            border-radius: 8px;
-            cursor: pointer;
+            color: #475569;
+            font-size: 14px;
+            line-height: 1.5;
         }
 
-        button:hover {
-            background: #2980b9;
+        .socials {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        .socials a {
+            text-decoration: none;
+            color: #ffffff;
+            background: #6366f1;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            transition: background 0.2s ease;
+        }
+
+        .socials a:hover {
+            background: #4338ca;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 24px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 16px;
+        }
+
+        .stats div h2 {
+            font-size: 18px;
+            color: #1e293b;
+        }
+
+        .stats div p {
+            font-size: 12px;
+            color: #94a3b8;
+            text-transform: uppercase;
+        }
+
+        .btn {
+            margin-top: 24px;
+            display: inline-block;
+            background: #6366f1;
+            color: #ffffff;
+            padding: 10px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s ease;
+        }
+
+        .btn:hover {
+            background: #4338ca;
         }
     </style>
 </head>
 
 <body>
+
     <div class="card">
-        <img src="https://via.placeholder.com/100" alt="Profile Image" />
-        <h2 id="name">Your Name</h2>
-        <p id="role">Web Developer</p>
-        <p id="bio">Learning HTML, CSS, and JavaScript.</p>
-        <button id="btn">Say Hello</button>
-        <p id="message"></p>
+        <img src="A:\DG\@DEVANSH GUPTA\1. DEKSTOP\WORK STATION\Sigma_web_development\Photo\DG.jpeg"
+            alt="Profile picture of Devansh Gupta">
+        <h1>Devansh Gupta</h1>
+        <p class="role">Full-Stack Developer</p>
+        <p class="bio">
+            B.Tech CSE (AI) student and freelance developer building clean, production-quality web experiences.
+        </p>
+
+        <div class="socials">
+            <a href="#" aria-label="GitHub">GH</a>
+            <a href="#" aria-label="LinkedIn">IN</a>
+            <a href="#" aria-label="Twitter">TW</a>
+        </div>
+
+        <div class="stats">
+            <div>
+                <h2>42</h2>
+                <p>Projects</p>
+            </div>
+            <div>
+                <h2>1.2k</h2>
+                <p>Followers</p>
+            </div>
+            <div>
+                <h2>310</h2>
+                <p>Following</p>
+            </div>
+        </div>
+
+        <a href="#" class="btn">Follow</a>
     </div>
 
-    <script>
-        // 1. Function Declaration
-        function greetUser(name) {
-            return "Hello, " + name + "!";
-        }
-
-        // 2. Function Expression
-        const showRole = function (role) {
-            return "Role: " + role;
-        };
-
-        // 3. Arrow Function
-        const updateBio = (bio) => {
-            document.getElementById("bio").textContent = bio;
-        };
-
-        // 4. Anonymous Function
-        document.getElementById("btn").addEventListener("click", function () {
-            document.getElementById("message").textContent = greetUser("Alex");
-        });
-
-        // 5. Callback Function
-        function changeText(text, callback) {
-            document.getElementById("message").textContent = text;
-            callback();
-        }
-
-        // 6. IIFE (Immediately Invoked Function Expression)
-        (function () {
-            document.getElementById("name").textContent = "Alex Carter";
-            document.getElementById("role").textContent = showRole("Frontend Developer");
-        })();
-
-        // Example of callback
-        changeText("Profile Card Loaded!", function () {
-            updateBio("I love building simple web projects.");
-        });
-    </script>
 </body>
 
 </html>
