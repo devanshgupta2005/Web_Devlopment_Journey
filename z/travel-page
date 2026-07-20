@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel - Explore Kyoto</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #1e293b;
+    line-height: 1.6;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: #ffffff;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    z-index: 10;
+  }
+
+  nav .logo {
+    font-weight: 700;
+    font-size: 20px;
+    color: #0f766e;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #1e293b;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  nav ul li a:hover {
+    color: #0f766e;
+  }
+
+  .hero {
+    position: relative;
+    height: 480px;
+  }
+
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.45);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero p {
+    margin-top: 10px;
+    font-size: 16px;
+    max-width: 480px;
+  }
+
+  main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 48px 20px;
+  }
+
+  section {
+    margin-bottom: 48px;
+  }
+
+  section h2 {
+    font-size: 24px;
+    color: #0f766e;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  .highlights article {
+    background: #f0fdfa;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  }
+
+  .highlights article img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+
+  .highlights article div {
+    padding: 16px;
+  }
+
+  .highlights article h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+    color: #0f172a;
+  }
+
+  .highlights article p {
+    font-size: 14px;
+    color: #64748b;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+  }
+
+  table caption {
+    text-align: left;
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 8px;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 14px;
+  }
+
+  th {
+    background: #f0fdfa;
+    color: #0f766e;
+  }
+
+  .cta {
+    text-align: center;
+    background: #0f766e;
+    color: #fff;
+    padding: 48px 20px;
+  }
+
+  .cta h2 {
+    color: #fff;
+  }
+
+  .cta a {
+    display: inline-block;
+    margin-top: 16px;
+    background: #fff;
+    color: #0f766e;
+    padding: 12px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+    color: #94a3b8;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Wanderly</div>
+  <ul>
+    <li><a href="#highlights">Highlights</a></li>
+    <li><a href="#itinerary">Itinerary</a></li>
+    <li><a href="#book">Book</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1400" alt="Fushimi Inari torii gates in Kyoto, Japan">
+  <div class="overlay">
+    <h1>Explore Kyoto</h1>
+    <p>Ancient temples, quiet bamboo groves, and streets that still feel like old Japan.</p>
+  </div>
+</div>
+
+<main>
+  <section id="highlights">
+    <h2>Top Highlights</h2>
+    <div class="highlights">
+      <article>
+        <img src="https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?w=500" alt="Fushimi Inari Shrine torii gate pathway">
+        <div>
+          <h3>Fushimi Inari Shrine</h3>
+          <p>Walk through thousands of vermillion torii gates winding up the mountain.</p>
+        </div>
+      </article>
+      <article>
+        <img src="https://images.unsplash.com/photo-1503236823255-94609f598e71?w=500" alt="Arashiyama bamboo grove path">
+        <div>
+          <h3>Arashiyama Bamboo Grove</h3>
+          <p>Stroll through towering bamboo stalks that filter sunlight into green light.</p>
+        </div>
+      </article>
+      <article>
+        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=500" alt="Kinkaku-ji golden pavilion reflected in pond">
+        <div>
+          <h3>Kinkaku-ji</h3>
+          <p>The Golden Pavilion, reflected perfectly in its still garden pond.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="itinerary">
+    <h2>Suggested Itinerary</h2>
+    <table>
+      <caption>A 3-day breakdown for a first-time visit to Kyoto</caption>
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Morning</th>
+          <th>Afternoon</th>
+          <th>Evening</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Day 1</td>
+          <td>Fushimi Inari Shrine</td>
+          <td>Gion District walk</td>
+          <td>Pontocho Alley dinner</td>
+        </tr>
+        <tr>
+          <td>Day 2</td>
+          <td>Arashiyama Bamboo Grove</td>
+          <td>Tenryu-ji Temple</td>
+          <td>Kimono rental &amp; photos</td>
+        </tr>
+        <tr>
+          <td>Day 3</td>
+          <td>Kinkaku-ji</td>
+          <td>Nijo Castle</td>
+          <td>Nishiki Market food crawl</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+<div class="cta" id="book">
+  <h2>Ready to visit Kyoto?</h2>
+  <a href="#">Plan Your Trip</a>
+</div>
+
+<footer>
+  &copy; 2026 Wanderly Travel Guides. All rights reserved.
+</footer>
+
+</body>
+</html>
