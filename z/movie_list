@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Movie List</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0f0f13;
+    color: #e5e5e5;
+  }
+
+  header {
+    text-align: center;
+    padding: 48px 20px 24px;
+  }
+
+  header h1 {
+    font-size: 32px;
+    color: #facc15;
+  }
+
+  header p {
+    color: #a1a1aa;
+    margin-top: 8px;
+  }
+
+  .filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 0 20px 32px;
+  }
+
+  .filters button {
+    background: #27272a;
+    color: #e5e5e5;
+    border: 1px solid #3f3f46;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 13px;
+    cursor: pointer;
+  }
+
+  .filters button.active {
+    background: #facc15;
+    color: #18181b;
+    border-color: #facc15;
+    font-weight: 700;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+  }
+
+  .movie {
+    background: #18181b;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #27272a;
+  }
+
+  .movie img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .movie .info {
+    padding: 16px;
+  }
+
+  .movie h3 {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .movie .meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #a1a1aa;
+    margin-bottom: 8px;
+  }
+
+  .movie .rating {
+    color: #facc15;
+    font-weight: 700;
+  }
+
+  .movie .genres {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .movie .genres span {
+    background: #27272a;
+    color: #d4d4d8;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 999px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 24px;
+    color: #52525b;
+    font-size: 13px;
+    border-top: 1px solid #27272a;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>My Movie List</h1>
+  <p>A running log of films I've watched and rated</p>
+</header>
+
+<div class="filters">
+  <button class="active">All</button>
+  <button>Watched</button>
+  <button>Watchlist</button>
+  <button>Top Rated</button>
+</div>
+
+<div class="grid">
+
+  <div class="movie">
+    <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=400" alt="Poster style still for Inception">
+    <div class="info">
+      <h3>Inception</h3>
+      <div class="meta">
+        <span>2010</span>
+        <span class="rating">&#9733; 8.8</span>
+      </div>
+      <div class="genres">
+        <span>Sci-Fi</span>
+        <span>Thriller</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="movie">
+    <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=400" alt="Poster style still for Interstellar">
+    <div class="info">
+      <h3>Interstellar</h3>
+      <div class="meta">
+        <span>2014</span>
+        <span class="rating">&#9733; 8.6</span>
+      </div>
+      <div class="genres">
+        <span>Sci-Fi</span>
+        <span>Drama</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="movie">
+    <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=400" alt="Poster style still for The Dark Knight">
+    <div class="info">
+      <h3>The Dark Knight</h3>
+      <div class="meta">
+        <span>2008</span>
+        <span class="rating">&#9733; 9.0</span>
+      </div>
+      <div class="genres">
+        <span>Action</span>
+        <span>Crime</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="movie">
+    <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=400" alt="Poster style still for The Matrix">
+    <div class="info">
+      <h3>The Matrix</h3>
+      <div class="meta">
+        <span>1999</span>
+        <span class="rating">&#9733; 8.7</span>
+      </div>
+      <div class="genres">
+        <span>Sci-Fi</span>
+        <span>Action</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="movie">
+    <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=400" alt="Poster style still for Parasite">
+    <div class="info">
+      <h3>Parasite</h3>
+      <div class="meta">
+        <span>2019</span>
+        <span class="rating">&#9733; 8.5</span>
+      </div>
+      <div class="genres">
+        <span>Drama</span>
+        <span>Thriller</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="movie">
+    <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=400" alt="Poster style still for Whiplash">
+    <div class="info">
+      <h3>Whiplash</h3>
+      <div class="meta">
+        <span>2014</span>
+        <span class="rating">&#9733; 8.5</span>
+      </div>
+      <div class="genres">
+        <span>Drama</span>
+        <span>Music</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  &copy; 2026 My Movie List
+</footer>
+
+</body>
+</html>
