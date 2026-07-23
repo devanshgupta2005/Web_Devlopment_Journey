@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frequently Asked Questions</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
+  }
+
+  header {
+    text-align: center;
+    padding: 56px 20px 32px;
+  }
+
+  header h1 {
+    font-size: 32px;
+    color: #0f172a;
+  }
+
+  header p {
+    color: #64748b;
+    margin-top: 8px;
+  }
+
+  main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+  }
+
+  .category-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #6366f1;
+    font-weight: 700;
+    margin: 32px 0 12px;
+  }
+
+  details {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    padding: 4px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  details[open] {
+    border-color: #6366f1;
+  }
+
+  summary {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 16px 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary::after {
+    content: "+";
+    font-size: 20px;
+    color: #6366f1;
+    transition: transform 0.2s ease;
+  }
+
+  details[open] summary::after {
+    content: "\2212";
+  }
+
+  details p {
+    padding-bottom: 18px;
+    color: #475569;
+    font-size: 15px;
+  }
+
+  details ul {
+    padding: 0 0 18px 20px;
+    color: #475569;
+    font-size: 15px;
+  }
+
+  .contact {
+    text-align: center;
+    margin-top: 48px;
+    padding: 32px;
+    background: #eef2ff;
+    border-radius: 12px;
+  }
+
+  .contact h2 {
+    font-size: 18px;
+    color: #1e293b;
+    margin-bottom: 8px;
+  }
+
+  .contact a {
+    display: inline-block;
+    margin-top: 12px;
+    background: #6366f1;
+    color: #fff;
+    padding: 10px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Frequently Asked Questions</h1>
+  <p>Everything you need to know before getting started</p>
+</header>
+
+<main>
+
+  <p class="category-title">General</p>
+
+  <details open>
+    <summary>What services do you offer?</summary>
+    <p>
+      I build full-stack web applications, from responsive front-end interfaces to
+      back-end APIs and database design, tailored to each client's needs.
+    </p>
+  </details>
+
+  <details>
+    <summary>How long does a typical project take?</summary>
+    <p>
+      Most projects take between two and six weeks depending on scope, from a simple
+      landing page to a full application with authentication and a database.
+    </p>
+  </details>
+
+  <p class="category-title">Working Together</p>
+
+  <details>
+    <summary>Do you work with clients remotely?</summary>
+    <p>
+      Yes, all projects are handled remotely with regular updates over email or
+      video calls, and progress shared through a shared repository or staging link.
+    </p>
+  </details>
+
+  <details>
+    <summary>What do you need from me to get started?</summary>
+    <ul>
+      <li>A short brief describing your goals</li>
+      <li>Any existing brand assets (logo, colors, fonts)</li>
+      <li>Examples of sites or designs you like</li>
+      <li>A rough timeline or deadline</li>
+    </ul>
+  </details>
+
+  <p class="category-title">Pricing</p>
+
+  <details>
+    <summary>How is pricing determined?</summary>
+    <p>
+      Pricing depends on project scope and complexity. I provide a fixed quote after
+      an initial consultation, so there are no surprises along the way.
+    </p>
+  </details>
+
+  <details>
+    <summary>Do you offer ongoing maintenance?</summary>
+    <p>
+      Yes, maintenance and support packages are available after launch for updates,
+      bug fixes, and small feature additions.
+    </p>
+  </details>
+
+  <div class="contact">
+    <h2>Still have questions?</h2>
+    <p>Reach out and I'll get back to you within a day.</p>
+    <a href="#">Contact Me</a>
+  </div>
+
+</main>
+
+</body>
+</html>
