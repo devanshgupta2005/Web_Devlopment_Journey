@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marksheet</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+            padding: 40px 20px;
+        }
+
+        .sheet {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 2px solid #1e293b;
+            padding: 40px;
+        }
+
+        .sheet-header {
+            text-align: center;
+            border-bottom: 3px double #1e293b;
+            padding-bottom: 20px;
+            margin-bottom: 24px;
+        }
+
+        .sheet-header h1 {
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+
+        .sheet-header p {
+            font-size: 13px;
+            color: #64748b;
+            margin-top: 4px;
+        }
+
+        .student-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 40px;
+            font-size: 14px;
+            margin-bottom: 28px;
+        }
+
+        .student-info div {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dotted #cbd5e1;
+            padding-bottom: 4px;
+        }
+
+        .student-info span.label {
+            color: #64748b;
+        }
+
+        .student-info span.value {
+            font-weight: 600;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+
+        caption {
+            text-align: left;
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #cbd5e1;
+            padding: 10px 12px;
+            text-align: center;
+        }
+
+        th {
+            background: #1e293b;
+            color: #fff;
+        }
+
+        td:first-child,
+        th:first-child {
+            text-align: left;
+        }
+
+        tfoot td {
+            font-weight: 700;
+            background: #f1f5f9;
+        }
+
+        .grade-pass {
+            color: #16a34a;
+            font-weight: 700;
+        }
+
+        .grade-avg {
+            color: #ca8a04;
+            font-weight: 700;
+        }
+
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .summary div {
+            text-align: center;
+            background: #f1f5f9;
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .summary div strong {
+            display: block;
+            font-size: 20px;
+            color: #1e293b;
+        }
+
+        .summary div span {
+            font-size: 12px;
+            color: #64748b;
+            text-transform: uppercase;
+        }
+
+        .signatures {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 48px;
+            font-size: 13px;
+        }
+
+        .signatures div {
+            text-align: center;
+            width: 160px;
+        }
+
+        .signatures div p:first-child {
+            border-top: 1px solid #1e293b;
+            padding-top: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sheet">
+
+        <div class="sheet-header">
+            <h1>National Public School</h1>
+            <p>Statement of Marks &mdash; Annual Examination 2026</p>
+        </div>
+
+        <div class="student-info">
+            <div><span class="label">Student Name</span><span class="value">Devansh Gupta</span></div>
+            <div><span class="label">Roll No.</span><span class="value">21CSAI047</span></div>
+            <div><span class="label">Class</span><span class="value">B.Tech CSE (AI) &ndash; 4th Year</span></div>
+            <div><span class="label">Session</span><span class="value">2025&ndash;2026</span></div>
+        </div>
+
+        <table>
+            <caption>Subject-wise Marks</caption>
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Max Marks</th>
+                    <th>Marks Obtained</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Machine Learning</td>
+                    <td>100</td>
+                    <td>91</td>
+                    <td class="grade-pass">A+</td>
+                </tr>
+                <tr>
+                    <td>Database Systems</td>
+                    <td>100</td>
+                    <td>85</td>
+                    <td class="grade-pass">A</td>
+                </tr>
+                <tr>
+                    <td>Web Technologies</td>
+                    <td>100</td>
+                    <td>94</td>
+                    <td class="grade-pass">A+</td>
+                </tr>
+                <tr>
+                    <td>Computer Networks</td>
+                    <td>100</td>
+                    <td>78</td>
+                    <td class="grade-avg">B+</td>
+                </tr>
+                <tr>
+                    <td>Software Engineering</td>
+                    <td>100</td>
+                    <td>88</td>
+                    <td class="grade-pass">A</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Total</td>
+                    <td>500</td>
+                    <td>436</td>
+                    <td>&mdash;</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div class="summary">
+            <div>
+                <strong>87.2%</strong>
+                <span>Percentage</span>
+            </div>
+            <div>
+                <strong>A</strong>
+                <span>Overall Grade</span>
+            </div>
+            <div>
+                <strong>PASS</strong>
+                <span>Result</span>
+            </div>
+        </div>
+
+        <div class="signatures">
+            <div>
+                <p>Class Teacher</p>
+            </div>
+            <div>
+                <p>Principal</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
