@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Collection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #1c1917;
+            color: #e7e5e4;
+        }
+
+        header {
+            text-align: center;
+            padding: 56px 20px 32px;
+        }
+
+        header h1 {
+            font-size: 32px;
+            font-family: Georgia, serif;
+            color: #fbbf24;
+        }
+
+        header p {
+            color: #a8a29e;
+            margin-top: 8px;
+        }
+
+        .grid {
+            columns: 3 260px;
+            column-gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+
+        figure.quote-card {
+            break-inside: avoid;
+            background: #292524;
+            border: 1px solid #44403c;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+
+        figure.quote-card blockquote {
+            font-family: Georgia, serif;
+            font-size: 18px;
+            font-style: italic;
+            line-height: 1.5;
+            position: relative;
+            padding-left: 8px;
+        }
+
+        figure.quote-card blockquote::before {
+            content: "\201C";
+            font-size: 40px;
+            color: #fbbf24;
+            line-height: 0;
+            position: relative;
+            top: 14px;
+            margin-right: 4px;
+        }
+
+        figure.quote-card figcaption {
+            margin-top: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #a8a29e;
+        }
+
+        figure.quote-card figcaption cite {
+            font-style: normal;
+            font-weight: 700;
+            color: #fbbf24;
+        }
+
+        .tag {
+            background: #44403c;
+            color: #d6d3d1;
+            padding: 2px 10px;
+            border-radius: 999px;
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+
+        footer {
+            text-align: center;
+            padding: 24px;
+            color: #78716c;
+            font-size: 13px;
+            border-top: 1px solid #292524;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Quote Collection</h1>
+        <p>Words worth remembering, gathered in one place</p>
+    </header>
+
+    <div class="grid">
+
+        <figure class="quote-card">
+            <blockquote>The only way to do great work is to love what you do.</blockquote>
+            <figcaption>
+                <cite>Steve Jobs</cite>
+                <span class="tag">Work</span>
+            </figcaption>
+        </figure>
+
+        <figure class="quote-card">
+            <blockquote>Code is like humor. When you have to explain it, it's bad.</blockquote>
+            <figcaption>
+                <cite>Cory House</cite>
+                <span class="tag">Coding</span>
+            </figcaption>
+        </figure>
+
+        <figure class="quote-card">
+            <blockquote>Simplicity is the soul of efficiency.</blockquote>
+            <figcaption>
+                <cite>Austin Freeman</cite>
+                <span class="tag">Design</span>
+            </figcaption>
+        </figure>
+
+        <figure class="quote-card">
+            <blockquote>The best way to predict the future is to invent it.</blockquote>
+            <figcaption>
+                <cite>Alan Kay</cite>
+                <span class="tag">Innovation</span>
+            </figcaption>
+        </figure>
+
+        <figure class="quote-card">
+            <blockquote>First, solve the problem. Then, write the code.</blockquote>
+            <figcaption>
+                <cite>John Johnson</cite>
+                <span class="tag">Coding</span>
+            </figcaption>
+        </figure>
+
+        <figure class="quote-card">
+            <blockquote>Do or do not. There is no try.</blockquote>
+            <figcaption>
+                <cite>Yoda</cite>
+                <span class="tag">Mindset</span>
+            </figcaption>
+        </figure>
+
+        <figure class="quote-card">
+            <blockquote>Good design is obvious. Great design is transparent.</blockquote>
+            <figcaption>
+                <cite>Joe Sparano</cite>
+                <span class="tag">Design</span>
+            </figcaption>
+        </figure>
+
+        <figure class="quote-card">
+            <blockquote>Perfection is achieved not when there is nothing more to add, but when there is nothing left to
+                take away.</blockquote>
+            <figcaption>
+                <cite>Antoine de Saint-Exup&eacute;ry</cite>
+                <span class="tag">Design</span>
+            </figcaption>
+        </figure>
+
+        <figure class="quote-card">
+            <blockquote>Learning never exhausts the mind.</blockquote>
+            <figcaption>
+                <cite>Leonardo da Vinci</cite>
+                <span class="tag">Learning</span>
+            </figcaption>
+        </figure>
+
+    </div>
+
+    <footer>
+        &copy; 2026 Quote Collection
+    </footer>
+
+</body>
+
+</html>
