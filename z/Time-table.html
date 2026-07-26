@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Timetable</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            padding: 40px 20px;
+        }
+
+        .wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        header h1 {
+            font-size: 28px;
+        }
+
+        header p {
+            color: #64748b;
+            margin-top: 6px;
+            font-size: 14px;
+        }
+
+        .table-scroll {
+            overflow-x: auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 780px;
+        }
+
+        caption {
+            caption-side: top;
+            text-align: left;
+            padding: 16px 20px 0;
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        th,
+        td {
+            padding: 14px 12px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            font-size: 13px;
+        }
+
+        thead th {
+            background: #4338ca;
+            color: #fff;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        tbody th {
+            background: #eef2ff;
+            color: #4338ca;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        td.subject {
+            font-weight: 600;
+        }
+
+        td.lab {
+            background: #f0fdf4;
+            color: #15803d;
+        }
+
+        td.break-slot {
+            background: #fef9c3;
+            color: #854d0e;
+            font-weight: 600;
+        }
+
+        td.free {
+            color: #94a3b8;
+            font-style: italic;
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            font-size: 13px;
+            flex-wrap: wrap;
+        }
+
+        .legend span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .legend i {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            display: inline-block;
+        }
+
+        .swatch-lab {
+            background: #bbf7d0;
+        }
+
+        .swatch-break {
+            background: #fef08a;
+        }
+
+        .swatch-free {
+            background: #e2e8f0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <header>
+            <h1>Weekly Timetable</h1>
+            <p>B.Tech CSE (AI) &ndash; Semester 7</p>
+        </header>
+
+        <div class="table-scroll">
+            <table>
+                <caption>Class schedule for Monday through Friday, 9:00 AM to 4:00 PM</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Time</th>
+                        <th scope="col">Monday</th>
+                        <th scope="col">Tuesday</th>
+                        <th scope="col">Wednesday</th>
+                        <th scope="col">Thursday</th>
+                        <th scope="col">Friday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">9:00 &ndash; 10:00</th>
+                        <td class="subject">Machine Learning</td>
+                        <td class="subject">Database Systems</td>
+                        <td class="subject">Machine Learning</td>
+                        <td class="subject">Software Engg.</td>
+                        <td class="subject">Web Technologies</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">10:00 &ndash; 11:00</th>
+                        <td class="subject">Database Systems</td>
+                        <td class="subject">Computer Networks</td>
+                        <td class="subject">Software Engg.</td>
+                        <td class="subject">Machine Learning</td>
+                        <td class="subject">Computer Networks</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">11:00 &ndash; 11:15</th>
+                        <td class="break-slot" colspan="5">Short Break</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">11:15 &ndash; 1:00</th>
+                        <td class="lab">ML Lab</td>
+                        <td class="subject">Web Technologies</td>
+                        <td class="lab">DBMS Lab</td>
+                        <td class="subject">Computer Networks</td>
+                        <td class="lab">Networks Lab</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1:00 &ndash; 2:00</th>
+                        <td class="break-slot" colspan="5">Lunch Break</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2:00 &ndash; 3:00</th>
+                        <td class="subject">Software Engg.</td>
+                        <td class="subject">Machine Learning</td>
+                        <td class="subject">Computer Networks</td>
+                        <td class="subject">Database Systems</td>
+                        <td class="free">Free Period</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3:00 &ndash; 4:00</th>
+                        <td class="free">Free Period</td>
+                        <td class="subject">Software Engg.</td>
+                        <td class="subject">Web Technologies</td>
+                        <td class="free">Free Period</td>
+                        <td class="free">Free Period</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="legend">
+            <span><i class="swatch-lab"></i> Lab Session</span>
+            <span><i class="swatch-break"></i> Break</span>
+            <span><i class="swatch-free"></i> Free Period</span>
+        </div>
+    </div>
+
+</body>
+
+</html>
